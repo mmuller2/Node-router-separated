@@ -42,7 +42,7 @@ const deleteTaskByID = (req, res) => {
   const found = data.findIndex((task) => task.id === numberID);
 
   console.log({ found, numberID });
-  if (found) {
+  if (found != null) {
     const deletedTask = data.splice(found, 1);
     console.log('deleted', deletedTask);
     res.json({ success: true, payload: deletedTask }).status(200);
