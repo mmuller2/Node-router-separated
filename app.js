@@ -1,9 +1,12 @@
 import express from 'express';
 import * as router from './router/index.js';
+import morgan from 'morgan';
 // import  from './router/index.js';
 
 const app = express();
 const PORT = 3000;
+
+app.use(morgan('dev'));
 
 app.use('/api/v1/todos', router.tasks);
 // app.use('/api/v1/jobs', router.jobs);
